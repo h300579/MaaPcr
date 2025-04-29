@@ -22,7 +22,7 @@
     "task": [
         {
             "name": "普通任务",
-            "entry": "StartPoint"
+            "entry": "Start"
         }
     ]
 }

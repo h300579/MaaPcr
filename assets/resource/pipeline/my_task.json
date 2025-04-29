@@ -1,18 +1,21 @@
 {
-    "StartPoint":{
+    "Start":{
         "next":[
+            "S我的主页",
             "S关闭首页窗口"
         ]
     },
     "S关闭首页窗口":{
+        "timeout":1000,
         "next":[
+            "t生日剧情解锁",
+            "t团队战最终日",
             "t通知",
             "t动画设定",
             "t超值!7天体力资源补给",
             "t道具装备礼包",
             "t活动结束预告",
-            "t内容解锁",
-            "S我的主页"
+            "t内容解锁"
         ]
     },
     "S我的主页":{
@@ -35,6 +38,14 @@
     "s登录记录界面":{
         "next":[
             "t登录记录界面"
+        ]
+    },
+    "s选择完账号，加载进入主页":{
+        "next":[
+            "t数据下载",
+            "t确认",
+            "t从账号选择界面进入主菜单",
+            "c循环点击直到进入主菜单"
         ]
     },
 
@@ -60,15 +71,43 @@
         "recognition":"OCR",
         "expected":"确认"
     },
+    "B下载":{
+        "recognition":"OCR",
+        "expected":"下载"
+    },
 
 
 
+    "t生日剧情解锁":{
+        "recognition": "OCR",
+        "expected":"生日剧情解锁",
+        "action":"click",
+        "target":[
+            465,622,57,30
+        ],
+        "post_delay":700,
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
+    "t团队战最终日":{
+        "recognition": "OCR",
+        "expected":"团队战最终日",
+        "action":"click",
+        "target":[
+            608,561,57,31
+        ],
+        "post_delay":700,
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
     "t通知":{
         "recognition": "OCR",
         "expected":"通知",
         "action":"click",
         "target":"B关闭",
-        "post_delay":1000,
+        "post_delay":700,
         "next":[
             "S关闭首页窗口"
         ]
@@ -78,7 +117,7 @@
         "expected":"动画设定",
         "action":"click",
         "target":"B设定",
-        "post_delay":1000,
+        "post_delay":700,
         "next":[
             "S关闭首页窗口"
         ]
@@ -88,7 +127,7 @@
         "expected":"7天体力支援补给",
         "action":"click",
         "target":"B取消",
-        "post_delay":1000,
+        "post_delay":700,
         "next":[
             "S关闭首页窗口"
         ]
@@ -98,7 +137,7 @@
         "expected":"道具装备礼包",
         "action":"click",
         "target":"B取消",
-        "post_delay":1000,
+        "post_delay":700,
         "next":[
             "S关闭首页窗口"
         ]
@@ -106,7 +145,7 @@
     "t活动结束预告":{
         "recognition": "OCR",
         "expected":"活动结束预告",
-        "post_delay":1000,
+        "post_delay":700,
         "action":"click",
         "target":[
             465,622,57,30
@@ -120,7 +159,7 @@
         "expected":"内容解锁",
         "action":"click",
         "target":"B关闭",
-        "post_delay":1000,
+        "post_delay":700,
         "next":[
             "S关闭首页窗口"
         ]
@@ -129,7 +168,7 @@
         "recognition": "OCR",
         "expected":"我的主页",
         "action":"click",
-        "post_delay":1000,
+        "post_delay":700,
         "target":[
             1133,686,65,27
         ],
@@ -175,16 +214,38 @@
             759,300,50,50
         ],
         "next":[
-            
+            "c切换最后账号1上滑"
         ]
     },
-    "数据下载":{
+    "t数据下载":{
         "recognition": "OCR",
         "expected":"数据下载",
         "action":"click",
         "target":"B确认",
         "next":[
-
+            "t确认",
+            "s选择完账号，加载进入主页"
+        ]
+    },
+    "t确认":{
+        "recognition": "OCR",
+        "expected":"确认",
+        "action":"click",
+        "target":[
+            758,
+            475,
+            60,
+            37
+        ],
+        "next":[
+            "s选择完账号，加载进入主页"
+        ]
+    },
+    "t从账号选择界面进入主菜单":{
+        "recognition": "OCR",
+        "expected":"角色",
+        "next":[
+            "S关闭首页窗口"
         ]
     },
     
@@ -194,7 +255,8 @@
         "expected":"回到标题画面",
         "action":"click",
         "next":[
-           "t确认画面"
+           "t确认画面",
+           "c回到标题画面"
         ]
     },
     "c点击屏幕开始游戏循环点击":{
@@ -205,6 +267,67 @@
         ],
         "next":[
             "s点击屏幕开始游戏"
+        ]
+    },
+    "c切换最后账号1上滑":{
+        "recognition":"DirectHit",
+        "action":"Swipe",
+        "begin":[
+            709,500,50,50
+        ],
+        "end":[
+            759,10,50,50
+        ],
+        "duration":100,
+        "next":[
+            "c切换最后账号2上滑"
+        ]
+    },
+    "c切换最后账号2上滑":{
+        "recognition":"DirectHit",
+        "action":"Swipe",
+        "begin":[
+            709,500,50,50
+        ],
+        "end":[
+            759,10,50,50
+        ],
+        "duration":100,
+        "next":[
+            "c切换最后账号3点击账号"
+        ]
+    },
+    "c切换最后账号3点击账号":{
+        "recognition":"OCR",
+        "expected":"登录记录",
+        "action":"click",
+        "target":[
+            554,484,50,24
+        ],
+        "next":[
+            "c切换最后账号4点击登录"
+        ]
+    },
+    "c切换最后账号4点击登录":{
+        "recognition":"OCR",
+        "expected":"登录记录",
+        "action":"click",
+        "target":[
+            622,385,36,21
+        ],
+        "post_delay":2000,
+        "next":[
+            "s选择完账号，加载进入主页"
+        ]
+    },
+    "c循环点击直到进入主菜单":{
+        "recognition":"DirectHit",
+        "action":"click",
+        "target":[
+            50,50,50,50
+        ],
+        "next":[
+            "s选择完账号，加载进入主页"
         ]
     }
 
