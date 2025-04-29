@@ -1,11 +1,211 @@
 {
     "StartPoint":{
         "next":[
-            "clickDailyTask"
+            "S关闭首页窗口"
         ]
     },
-    "clickDailyTask":{
-        "recognition": "日常任务",
-        "action":"click"
+    "S关闭首页窗口":{
+        "next":[
+            "t通知",
+            "t动画设定",
+            "t超值!7天体力资源补给",
+            "t道具装备礼包",
+            "t活动结束预告",
+            "t内容解锁",
+            "S我的主页"
+        ]
+    },
+    "S我的主页":{
+        "next":[
+            "t我的主菜单",
+            "s点击屏幕开始游戏"
+        ]
+    },
+    "s点击屏幕开始游戏":{
+        "next":[
+            "t点击屏幕开始游戏",
+            "c点击屏幕开始游戏循环点击"
+        ]
+    },
+    "s切换账号":{
+        "next":[
+            "t切换账号"
+        ]
+    },
+    "s登录记录界面":{
+        "next":[
+            "t登录记录界面"
+        ]
+    },
+
+
+
+    "B设定":{
+        "recognition":"OCR",
+        "expected":"设定"
+    },
+    "B取消":{
+        "recognition":"OCR",
+        "expected":"取消"
+    },
+    "B关闭":{
+        "recognition":"OCR",
+        "expected":"关闭"
+    },
+    "B主菜单":{
+        "recognition":"OCR",
+        "expected":"主菜单"
+    },
+    "B确认":{
+        "recognition":"OCR",
+        "expected":"确认"
+    },
+
+
+
+    "t通知":{
+        "recognition": "OCR",
+        "expected":"通知",
+        "action":"click",
+        "target":"B关闭",
+        "post_delay":1000,
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
+    "t动画设定":{
+        "recognition": "OCR",
+        "expected":"动画设定",
+        "action":"click",
+        "target":"B设定",
+        "post_delay":1000,
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
+    "t超值!7天体力资源补给":{
+        "recognition": "OCR",
+        "expected":"7天体力支援补给",
+        "action":"click",
+        "target":"B取消",
+        "post_delay":1000,
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
+    "t道具装备礼包":{
+        "recognition": "OCR",
+        "expected":"道具装备礼包",
+        "action":"click",
+        "target":"B取消",
+        "post_delay":1000,
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
+    "t活动结束预告":{
+        "recognition": "OCR",
+        "expected":"活动结束预告",
+        "post_delay":1000,
+        "action":"click",
+        "target":[
+            465,622,57,30
+        ],
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
+    "t内容解锁":{
+        "recognition": "OCR",
+        "expected":"内容解锁",
+        "action":"click",
+        "target":"B关闭",
+        "post_delay":1000,
+        "next":[
+            "S关闭首页窗口"
+        ]
+    },
+    "t我的主菜单":{
+        "recognition": "OCR",
+        "expected":"我的主页",
+        "action":"click",
+        "post_delay":1000,
+        "target":[
+            1133,686,65,27
+        ],
+        "next":[
+            "c回到标题画面"
+        ]
+    },
+    "t确认画面":{
+        "recognition": "OCR",
+        "expected":"确认画面",
+        "action":"click",
+        "target":[
+            756,475,60,35
+        ],
+        "next":[
+            "s点击屏幕开始游戏"
+        ]
+    },
+    "t点击屏幕开始游戏":{
+        "recognition": "OCR",
+        "expected":"主菜单",
+        "action":"click",
+        "target":[
+            50,50,50,50
+        ],
+        "next":[
+           "s切换账号"
+        ]
+    },
+    "t切换账号":{
+        "recognition": "OCR",
+        "expected":"切换账号",
+        "action":"click",
+        "next":[
+            "s登录记录界面"
+        ]
+    },
+    "t登录记录界面":{
+        "recognition": "OCR",
+        "expected":"登录记录",
+        "action":"click",
+        "target":[
+            759,300,50,50
+        ],
+        "next":[
+            
+        ]
+    },
+    "数据下载":{
+        "recognition": "OCR",
+        "expected":"数据下载",
+        "action":"click",
+        "target":"B确认",
+        "next":[
+
+        ]
+    },
+    
+
+    "c回到标题画面":{
+        "recognition": "OCR",
+        "expected":"回到标题画面",
+        "action":"click",
+        "next":[
+           "t确认画面"
+        ]
+    },
+    "c点击屏幕开始游戏循环点击":{
+        "recognition":"DirectHit",
+        "action":"click",
+        "target":[
+            50,50,50,50
+        ],
+        "next":[
+            "s点击屏幕开始游戏"
+        ]
     }
+
 }
